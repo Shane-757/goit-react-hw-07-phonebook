@@ -9,10 +9,10 @@ const ContactList = () => {
   const filter = useSelector((state) => state.phonebook.filter);
   const sort = useSelector((state) => state.phonebook.sort);
 
-   let filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()) ||
-    contact.number.includes(filter)
-  );
+  let filteredContacts = contacts.filter((contact) =>
+  (contact.name && contact.name.toLowerCase().includes(filter.toLowerCase())) ||
+  (contact.number && contact.number.includes(filter))
+);
 
    if (sort === 'asc') {
     filteredContacts = filteredContacts.sort((a, b) => a.name.localeCompare(b.name));
