@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
-import { store } from '../components/Store/Store';
-import PhoneApp from './PhoneApp/PhoneApp';
+import { store } from './Redux/Store/Store';
+import PhoneApp from './pages/PhoneApp';
 
 export const App = () => {
   return (
