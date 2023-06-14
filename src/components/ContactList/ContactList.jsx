@@ -68,7 +68,7 @@ const ContactList = () => {
               }}
               disabled={isUpdating}  
             >
-              Update
+              Update Contact
             </button>
             {updateContactId === contact.id && (
               <form onSubmit={handleUpdateSubmit}>
