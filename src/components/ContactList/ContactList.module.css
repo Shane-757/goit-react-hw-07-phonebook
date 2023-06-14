@@ -1,11 +1,12 @@
-.contactTitle{
+.contactTitle {
     font-size: 50px;
     font-weight: 700;
     margin-bottom: 10px;
     margin-top: 0;
     text-align: center;
 }
-.contactInfo{
+
+.contactInfo {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -13,11 +14,43 @@
     text-align: center;
     list-style: none;
 }
-.deleteButton{
+
+.deleteButton,
+.updateButton {
     margin-left: 10px;
     box-shadow: black 5px -5px 5px;
 }
+
 .deleteButton:hover{
     background-color: #f32323;
     cursor: pointer;
+}
+.updateButton:hover{
+    background-color: #42f50c;
+    cursor: pointer;
+}
+
+.submitUpdateButton{
+        margin-left: 10px;
+        box-shadow: black 5px -5px 5px;
+}
+
+.submitUpdateButton:hover {
+    background-color: #42f50c;
+    cursor: pointer;
+}
+
+.deleteButton:disabled,
+.updateButton:disabled {
+    background-color: gray;
+}
+
+.deleteButton:disabled:hover,
+.updateButton:disabled:hover {
+    background-color: gray;
+}
+
+.inputField {
+    margin-left: 10px;
+    box-shadow: black 5px -5px 5px;
 }

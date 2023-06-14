@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from "../Actions/phonebookActions";
+import { fetchContacts, addContact, deleteContact, updateContact } from "../Actions/phonebookActions";
 
 const initialState = {
   contacts: [],
@@ -54,7 +54,21 @@ export const phonebookSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
-      });
+      })
+      .addCase(updateContact.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+          const index = state.contacts.findIndex((contact) => contact.id === action.payload.id);
+            if (index !== -1) {
+            state.contacts[index] = action.payload;
+            }
+      })
+      .addCase(updateContact.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      }); 
   },
 });
 
